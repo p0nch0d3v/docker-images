@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'dotnet-sdk/'
+      - 'dotnet-sdk/**'
 
 env:
   REGISTRY: docker.io
