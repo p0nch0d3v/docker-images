@@ -39,7 +39,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}/dotnet-sdk"
+          context: "./dotnet-sdk/"
           build-args: |
             TARGETPLATFORM='linux/amd64'
             BUILDPLATFORM='linux/amd64'
