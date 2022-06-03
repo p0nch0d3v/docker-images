@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Publish Docker image, dotnet-sdk
 
 on:
   push:
@@ -33,7 +33,6 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-              latest
               ${{ env.TAG }}
 
       - name: Build and push Docker image
