@@ -1,16 +1,16 @@
-name: Publish Docker image, dotnet-sdk
+name: Publish Docker image, dotnet-sdk-node
 
 on:
   push:
     branches:
       - master
     paths:
-      - 'dotnet-sdk/**'
-      - .github/workflows/dotnet-sdk.yml
+      - 'dotnet-sdk-node/**'
+      - .github/workflows/dotnet-sdk-node.yml
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: "${{ secrets.DOCKER_USERNAME }}/dotnet-sdk"
+  IMAGE_NAME: "${{ secrets.DOCKER_USERNAME }}/dotnet-sdk-node"
   TAG: "6.0"
 
 jobs:
@@ -38,11 +38,11 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: "./dotnet-sdk/"
+          context: "./dotnet-sdk-node/"
           build-args: |
             TARGETPLATFORM=linux/amd64
             BUILDPLATFORM=linux/amd64
-            BASE_IMAGE=mcr.microsoft.com/dotnet/sdk:6.0
+            BASE_IMAGE=p0nch0d3v/dotnet-sdk:6.0
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
