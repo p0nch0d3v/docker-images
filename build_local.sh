@@ -7,9 +7,9 @@ function build_image () {
     path=$4
     echo "Building: [$base], [$plattaform], With: [$base]";
 
-    docker pull $1
+    # docker pull $1
 
-    docker image rm --force $2
+    # docker image rm --force $2
     
     docker buildx build \
         --build-arg BASE_IMAGE=$base \
@@ -23,6 +23,11 @@ function build_image () {
 }
 
 build_image 'mcr.microsoft.com/dotnet/sdk:6.0' \
-            'local/dotnet-sdk:6.0' \
+            'p0nch0d3v/dotnet-sdk:6.0' \
             'linux/amd64' \
-            'dotnet-sdk-6.0'
+            'dotnet-sdk'
+
+build_image 'p0nch0d3v/dotnet-sdk:6.0' \
+            'p0nch0d3v/dotnet-sdk-node:6.0' \
+            'linux/amd64' \
+            'dotnet-sdk-node'
