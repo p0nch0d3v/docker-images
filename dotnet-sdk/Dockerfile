@@ -14,3 +14,4 @@ RUN dotnet dev-certs https --trust
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
 WORKDIR /app
+ 
