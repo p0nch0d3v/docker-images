@@ -41,9 +41,9 @@ jobs:
         with:
           context: "./dotnet-sdk/"
           build-args: |
-            TARGETPLATFORM='linux/amd64'
-            BUILDPLATFORM='linux/amd64'
-            BASE_IMAGE='mcr.microsoft.com/dotnet/sdk:6.0'
+            TARGETPLATFORM=linux/amd64
+            BUILDPLATFORM=linux/amd64
+            BASE_IMAGE=mcr.microsoft.com/dotnet/sdk:6.0
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
