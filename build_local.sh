@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function build_image () {
     base=$1
@@ -23,6 +23,8 @@ function build_image () {
         --tag $image .
 
     docker image ls $image
+
+    cd ..
 }
 
 build_image 'mcr.microsoft.com/dotnet/sdk:6.0' \
@@ -36,6 +38,6 @@ build_image 'p0nch0d3v/dotnet-sdk:6.0' \
             'dotnet-sdk-node'
 
 build_image 'node:lts' \
-            'p0nch0d3v/node:lts' \
+            'p0nch0d3v/node-lts:latest' \
             'linux/amd64' \
             'node-lts'

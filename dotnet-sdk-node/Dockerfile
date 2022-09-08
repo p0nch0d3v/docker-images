@@ -4,7 +4,7 @@ ARG BASE_IMAGE
 
 FROM ${BASE_IMAGE}
 
-RUN apt install curl gnupg -yq > /dev/null \
+RUN apt-get install curl gnupg -yq > /dev/null \
     && curl -sL https://deb.nodesource.com/setup_lts.x | bash \
     && apt-get install nodejs -yq > /dev/null
 
