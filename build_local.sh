@@ -7,6 +7,8 @@ function build_image () {
     path=$4
     echo "Building: [$base], [$plattaform], With: [$base]";
 
+    cd $path
+
     # docker pull $1
 
     # docker image rm --force $2
@@ -15,8 +17,9 @@ function build_image () {
         --build-arg BASE_IMAGE=$base \
         --build-arg TARGETPLATFORM=$plattaform \
         --build-arg BUILDPLATFORM=$plattaform \
+        --progress=plain \
         --no-cache \
-        --file $path/Dockerfile \
+        --file Dockerfile \
         --tag $image .
 
     docker image ls $image
@@ -31,3 +34,8 @@ build_image 'p0nch0d3v/dotnet-sdk:6.0' \
             'p0nch0d3v/dotnet-sdk-node:6.0' \
             'linux/amd64' \
             'dotnet-sdk-node'
+
+build_image 'node:lts' \
+            'p0nch0d3v/node:lts' \
+            'linux/amd64' \
+            'node-lts'
