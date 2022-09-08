@@ -4,7 +4,9 @@ ARG BASE_IMAGE='mcr.microsoft.com/dotnet/sdk:6.0'
 
 FROM ${BASE_IMAGE}
 
-RUN apt update -yq > /dev/null && apt upgrade -yq > /dev/null
+RUN apt-get update --quiet --yes > /dev/null && \
+    apt-get upgrade --quiet --yes > /dev/null
+
 RUN dotnet tool install --global dotnet-ef
 RUN dotnet tool install --global dotnet-aspnet-codegenerator
 
