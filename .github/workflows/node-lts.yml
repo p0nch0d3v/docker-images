@@ -11,7 +11,7 @@ on:
 env:
   REGISTRY: docker.io
   IMAGE_NAME: "${{ secrets.DOCKER_USERNAME }}/node-lts"
-  TAG: "6.0"
+  TAG: "latest"
 
 jobs:
   push_to_registry:
