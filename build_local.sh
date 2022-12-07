@@ -41,3 +41,8 @@ build_image 'node:lts' \
             'p0nch0d3v/node-lts:latest' \
             'linux/amd64' \
             'node-lts'
+
+build_image 'codercom/code-server:latest' \
+            'p0nch0d3v/code-server:latest' \
+            'linux/amd64' \
+            'code-server'
