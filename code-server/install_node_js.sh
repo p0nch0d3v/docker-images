@@ -12,4 +12,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 echo $NVM_DIR
 
-nvm install --lts
+nvm install --lts 
+nvm use --lts
